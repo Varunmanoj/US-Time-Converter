@@ -102,7 +102,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css">
     <link rel="manifest" href="manifest.json?h=0277d58ecd4dd245834dcf15e7244eb3" crossorigin="use-credentials">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&amp;display=swap">
-    <link rel="stylesheet" href="assets/css/styles.css?h=f7d4a6e398113e16f33dc2e27aed108e">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+    <link rel="stylesheet" href="assets/css/styles.css?h=9433290c2034f634f92cbf2405a3f22d">
 </head>
 
 <body>
@@ -136,7 +137,7 @@
                 <div class="container" style="max-width: none;">
                     <form method="get" enctype="application/x-www-form-urlencoded">
                         <!-- Start: US Time -->
-                        <div class="Section"><label class="form-label" for="timeInput">Enter US Time</label><input class="focus-ring form-control form-control-lg" id="timeInput" type="time" name="us-time"></div><!-- End: US Time -->
+                        <div class="Section"><label class="form-label" for="timeInput">Enter US Time<i class="fas fa-star text-danger label-icon" style="font-size: 17px;"></i></label><input class="focus-ring form-control form-control-lg" id="timeInput" type="time" name="us-time" required=""></div><!-- End: US Time -->
                         <!-- Start: Time Converter -->
                         <div class="Section"><label class="form-label" for="timezoneSelect">Select Time Zone</label><select class="focus-ring form-select form-select-lg" id="timezoneSelect" name="timezoneSelect">
                                 <optgroup label="US">
@@ -146,7 +147,7 @@
                                     <option value="PST">Pecific Standard Time (PST)</option>
                                 </optgroup>
                             </select></div><!-- End: Time Converter -->
-                        <div class="Section"><button class="btn btn-primary focus-ring" id="convertButton" type="button" accesskey="c">Convert to IST</button></div><!-- Start: Result Regin -->
+                        <div class="Section"><button class="btn btn-primary btn-lg focus-ring" id="convertButton" type="button" accesskey="c">Convert to IST</button></div><!-- Start: Result Regin -->
                         <div class="Section answer-region">
                             <p class="fw-bold" id="result" tabindex="0" role="alert">Converted time in IST :&nbsp;</p>
                         </div><!-- End: Result Regin -->
