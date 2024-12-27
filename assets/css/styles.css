@@ -1,0 +1,18 @@
+.Section {
+  margin-top: 1rem;
+  margin-right: 1Rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  padding: 1rem;
+}
+
+.converter-region {
+  max-width: 70vw;
+  margin-left: 10%;
+}
+
+.Section.answer-region {
+  background: rgba(96,170,239,0.33);
+  border-radius: 10px;
+}
+
