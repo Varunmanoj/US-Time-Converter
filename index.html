@@ -154,9 +154,28 @@
                 </div>
             </section>
         </div>
-    </main>
+    </main><script>
+    // Check if service workers are supported
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            // Register the service worker
+            navigator.serviceWorker.register('/service-worker.js')
+                .then(function(registration) {
+                    console.log('Service Worker registered with scope: ', registration.scope);
+                })
+                .catch(function(error) {
+                    console.log('Service Worker registration failed: ', error);
+                });
+        });
+    } else {
+        console.log('Service workers are not supported in this browser.');
+    }
+</script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js"></script>
     <script src="assets/js/script.js?h=a62f7ecb1d193f5f92b9141f1e0e4eb2"></script>
+    <script src="assets/js/service-worker.js?h=277556a1bd760594120a2e8b9d492b04"></script>
 </body>
 
 </html>
