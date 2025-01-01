@@ -102,7 +102,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/journal/bootstrap.min.css">
     <link rel="manifest" href="manifest.json?h=0277d58ecd4dd245834dcf15e7244eb3" crossorigin="use-credentials">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&amp;display=swap">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
     <link rel="stylesheet" href="assets/css/styles.css?h=9433290c2034f634f92cbf2405a3f22d">
 </head>
 
@@ -133,50 +132,60 @@
                     </div>
                 </div><!-- End: 1 Row 2 Columns -->
             </section>
-            <section class="align-items-center Section converter-region">
-                <div class="container" style="max-width: none;">
-                    <form method="get" enctype="application/x-www-form-urlencoded">
-                        <!-- Start: US Time -->
-                        <div class="Section"><label class="form-label" for="timeInput">Enter US Time<i class="fas fa-star text-danger label-icon" style="font-size: 17px;"></i></label><input class="focus-ring form-control form-control-lg" id="timeInput" type="time" name="us-time" required=""></div><!-- End: US Time -->
-                        <!-- Start: Time Converter -->
-                        <div class="Section"><label class="form-label" for="timezoneSelect">Select Time Zone</label><select class="focus-ring form-select form-select-lg" id="timezoneSelect" name="timezoneSelect">
-                                <optgroup label="US">
-                                    <option value="CST">Central Standard Time (CST)</option>
-                                    <option value="EST">Eastern Stanard Time (EST)</option>
-                                    <option value="MST">Mountain Standard Time (MST)</option>
-                                    <option value="PST">Pecific Standard Time (PST)</option>
-                                </optgroup>
-                            </select></div><!-- End: Time Converter -->
-                        <div class="Section"><button class="btn btn-primary btn-lg focus-ring" id="convertButton" type="button" accesskey="c">Convert to IST</button></div><!-- Start: Result Regin -->
-                        <div class="Section answer-region">
-                            <p class="fw-bold" id="result" tabindex="0" role="alert">Converted time in IST :&nbsp;</p>
-                        </div><!-- End: Result Regin -->
-                    </form>
+            <div class="row">
+                <div class="col">
+                    <section class="align-items-center Section converter-region">
+                        <div class="container" style="max-width: none;">
+                            <h2 class="text-center">US to India&nbsp;</h2>
+                            <form method="get" enctype="application/x-www-form-urlencoded">
+                                <!-- Start: US Time -->
+                                <div class="Section"><label class="form-label" for="timeInput">Enter US Time</label><input class="focus-ring form-control form-control-lg" id="timeInput" type="time" name="us-time" required=""></div><!-- End: US Time -->
+                                <!-- Start: Time Converter -->
+                                <div class="Section"><label class="form-label" for="timezoneSelect">Select Time Zone</label><select class="focus-ring form-select form-select-lg" id="timezoneSelect" name="timezoneSelect">
+                                        <optgroup label="US">
+                                            <option value="CST">Central Standard Time (CST)</option>
+                                            <option value="EST">Eastern Stanard Time (EST)</option>
+                                            <option value="MST">Mountain Standard Time (MST)</option>
+                                            <option value="PST">Pecific Standard Time (PST)</option>
+                                        </optgroup>
+                                    </select></div><!-- End: Time Converter -->
+                                <div class="Section"><button class="btn btn-primary btn-lg focus-ring" id="convertButton" type="button" accesskey="u">Convert to IST</button></div><!-- Start: Result Regin -->
+                                <div class="Section answer-region">
+                                    <p class="fw-bold" id="result" tabindex="0" role="alert">Converted time in IST :&nbsp;</p>
+                                </div><!-- End: Result Regin -->
+                            </form>
+                        </div>
+                    </section>
                 </div>
-            </section>
+                <div class="col">
+                    <section class="align-items-center Section converter-region">
+                        <div class="container" style="max-width: none;">
+                            <h2 class="text-center">India to US</h2>
+                            <form method="get" enctype="application/x-www-form-urlencoded">
+                                <!-- Start: US Time -->
+                                <div class="Section"><label class="form-label" for="timeInput">Enter India Time</label><input class="focus-ring form-control form-control-lg" id="timeInput-1" type="time" name="us-time" required=""></div><!-- End: US Time -->
+                                <!-- Start: Time Converter -->
+                                <div class="Section"><label class="form-label" for="timezoneSelect">Select Time Zone</label><select class="focus-ring form-select form-select-lg" id="timezoneSelect-1" name="timezoneSelect">
+                                        <optgroup label="US">
+                                            <option value="CST">Central Standard Time (CST)</option>
+                                            <option value="EST">Eastern Stanard Time (EST)</option>
+                                            <option value="MST">Mountain Standard Time (MST)</option>
+                                            <option value="PST">Pecific Standard Time (PST)</option>
+                                        </optgroup>
+                                    </select></div><!-- End: Time Converter -->
+                                <div class="Section"><button class="btn btn-primary btn-lg focus-ring" id="convertButton-1" type="button" accesskey="i">Convert to US</button></div><!-- Start: Result Regin -->
+                                <div class="Section answer-region">
+                                    <p class="fw-bold" id="result-1" tabindex="0" role="alert">Converted time in US:&nbsp;</p>
+                                </div><!-- End: Result Regin -->
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </div>
         </div>
-    </main><script>
-    // Check if service workers are supported
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', function() {
-            // Register the service worker
-            navigator.serviceWorker.register('/service-worker.js')
-                .then(function(registration) {
-                    console.log('Service Worker registered with scope: ', registration.scope);
-                })
-                .catch(function(error) {
-                    console.log('Service Worker registration failed: ', error);
-                });
-        });
-    } else {
-        console.log('Service workers are not supported in this browser.');
-    }
-</script>
-
+    </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js"></script>
-    <script src="assets/js/script.js?h=a62f7ecb1d193f5f92b9141f1e0e4eb2"></script>
-    <script src="assets/js/service-worker.js?h=277556a1bd760594120a2e8b9d492b04"></script>
+    <script src="assets/js/script.js?h=ce06696d0fe456bb3d87c4e0cc9b922f"></script>
 </body>
 
 </html>
