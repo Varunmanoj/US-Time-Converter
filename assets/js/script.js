@@ -1,93 +1,124 @@
-// Conveert US  to India time 
+const isDSTActive = (timeZone) => {
+    const now = new Date();
+    const isStandardTime = now.toLocaleString('en-US', { timeZone, timeZoneName: 'short' }).endsWith('ST');
+    return !isStandardTime;
+};
 
-document.getElementById('convertButton').addEventListener('click', () => {
-    const timeInput = document.getElementById('timeInput').value;
-    const timezone = document.getElementById('timezoneSelect').value;
-    const resultDiv = document.getElementById('result');
+const updateTimeZoneOptions = (dropdownId) => {
+    const dropdown = document.getElementById(dropdownId);
+    const zones = [
+        { std: 'CST', dst: 'CDT', tz: 'America/Chicago' },
+        { std: 'EST', dst: 'EDT', tz: 'America/New_York' },
+        { std: 'MST', dst: 'MDT', tz: 'America/Denver' },
+        { std: 'PST', dst: 'PDT', tz: 'America/Los_Angeles' }
+    ];
 
-    if (!timeInput) {
-        resultDiv.textContent = 'Please enter a valid time.';
-        return;
-    }
+    dropdown.innerHTML = ''; // Clear existing options.
 
-    const [hours, minutes] = timeInput.split(':').map(Number);
-    let totalMinutes = hours * 60 + minutes;
+    zones.forEach(zone => {
+        const option = document.createElement('option');
+        if (isDSTActive(zone.tz)) {
+            option.value = zone.dst;
+            option.textContent = `${zone.dst} - ${zone.dst === 'CDT' ? 'Central Daylight Saving Time' : 
+                zone.dst === 'EDT' ? 'Eastern Daylight Saving Time' : 
+                zone.dst === 'MDT' ? 'Mountain Daylight Saving Time' : 'Pacific Daylight Saving Time'}`;
+        } else {
+            option.value = zone.std;
+            option.textContent = `${zone.std} - ${zone.std === 'CST' ? 'Central Standard Time' : 
+                zone.std === 'EST' ? 'Eastern Standard Time' : 
+                zone.std === 'MST' ? 'Mountain Standard Time' : 'Pacific Standard Time'}`;
+        }
+        dropdown.appendChild(option);
+    });
+};
 
-    // Add the time difference in minutes
-    switch (timezone) {
-        case 'CST':
-            totalMinutes += (11 * 60) + 30;
-            break;
-        case 'EST':
-            totalMinutes += (10 * 60) + 30;
-            break;
-        case 'MST':
-            totalMinutes += (12 * 60) + 30;
-            break;
-        case 'PST':
-            totalMinutes += (13 * 60) + 30;
-            break;
-        default:
-            resultDiv.textContent = 'Invalid time zone selection.';
+const convertUSToIndia = () => {
+    document.getElementById('convertButton').addEventListener('click', () => {
+        const timeInput = document.getElementById('timeInput').value;
+        const timezone = document.getElementById('timezoneSelect').value;
+        const resultDiv = document.getElementById('result');
+
+        if (!timeInput) {
+            resultDiv.textContent = 'Please enter a valid time.';
             return;
-    }
+        }
 
-    // Convert total minutes to 24-hour format
-    const istHours = Math.floor(totalMinutes / 60) % 24;
-    const istMinutes = totalMinutes % 60;
+        const [hours, minutes] = timeInput.split(':').map(Number);
+        let totalMinutes = hours * 60 + minutes;
 
-    // Format result in 12-hour format
-    const period = istHours >= 12 ? 'P.M.' : 'A.M.';
-    const displayHours = ((istHours % 12) || 12).toString().padStart(2, '0');
-    const displayMinutes = istMinutes.toString().padStart(2, '0');
+        switch (timezone) {
+            case 'CST': case 'CDT':
+                totalMinutes += isDSTActive('America/Chicago') ? (10 * 60) + 30 : (11 * 60) + 30;
+                break;
+            case 'EST': case 'EDT':
+                totalMinutes += isDSTActive('America/New_York') ? (9 * 60) + 30 : (10 * 60) + 30;
+                break;
+            case 'MST': case 'MDT':
+                totalMinutes += isDSTActive('America/Denver') ? (11 * 60) + 30 : (12 * 60) + 30;
+                break;
+            case 'PST': case 'PDT':
+                totalMinutes += isDSTActive('America/Los_Angeles') ? (12 * 60) + 30 : (13 * 60) + 30;
+                break;
+            default:
+                resultDiv.textContent = 'Invalid time zone selection.';
+                return;
+        }
 
-    resultDiv.textContent = `Converted Time in IST: ${displayHours}:${displayMinutes} ${period}`;
-});
+        const istHours = Math.floor(totalMinutes / 60) % 24;
+        const istMinutes = totalMinutes % 60;
+        const period = istHours >= 12 ? 'P.M.' : 'A.M.';
+        const displayHours = ((istHours % 12) || 12).toString().padStart(2, '0');
+        const displayMinutes = istMinutes.toString().padStart(2, '0');
 
+        resultDiv.textContent = `Converted Time in IST: ${displayHours}:${displayMinutes} ${period}`;
+    });
+};
 
+const convertIndiaToUS = () => {
+    document.getElementById('convertButton-1').addEventListener('click', () => {
+        const timeInput = document.getElementById('timeInput-1').value;
+        const timezone = document.getElementById('timezoneSelect-1').value;
+        const resultDiv = document.getElementById('result-1');
 
-
-// Convert India to US time
-document.getElementById('convertButton-1').addEventListener('click', () => {
-    const timeInput = document.getElementById('timeInput-1').value;
-    const timezone = document.getElementById('timezoneSelect-1').value;
-    const resultDiv = document.getElementById('result-1');
-
-    if (!timeInput) {
-        resultDiv.textContent = 'Please enter a valid time.';
-        return;
-    }
-
-    const [hours, minutes] = timeInput.split(':').map(Number);
-    let totalMinutes = hours * 60 + minutes;
-
-    // Subtract the time difference in minutes
-    switch (timezone) {
-        case 'CST':
-            totalMinutes -= (11 * 60) + 30;
-            break;
-        case 'EST':
-            totalMinutes -= (10 * 60) + 30;
-            break;
-        case 'MST':
-            totalMinutes -= (12 * 60) + 30;
-            break;
-        case 'PST':
-            totalMinutes -= (13 * 60) + 30;
-            break;
-        default:
-            resultDiv.textContent = 'Invalid time zone selection.';
+        if (!timeInput) {
+            resultDiv.textContent = 'Please enter a valid time.';
             return;
-    }
+        }
 
-    // Convert total minutes to 24-hour format
-    const usHours = (Math.floor(totalMinutes / 60) + 24) % 24; // Ensure hours wrap around
-    const usMinutes = (totalMinutes % 60 + 60) % 60; // Ensure minutes wrap around
+        const [hours, minutes] = timeInput.split(':').map(Number);
+        let totalMinutes = hours * 60 + minutes;
 
-    // Format result in 12-hour format
-    const period = usHours >= 12 ? 'P.M.' : 'A.M.';
-    const displayHours = ((usHours % 12) || 12).toString().padStart(2, '0');
-    const displayMinutes = usMinutes.toString().padStart(2, '0');
+        switch (timezone) {
+            case 'CST': case 'CDT':
+                totalMinutes -= isDSTActive('America/Chicago') ? (10 * 60) + 30 : (11 * 60) + 30;
+                break;
+            case 'EST': case 'EDT':
+                totalMinutes -= isDSTActive('America/New_York') ? (9 * 60) + 30 : (10 * 60) + 30;
+                break;
+            case 'MST': case 'MDT':
+                totalMinutes -= isDSTActive('America/Denver') ? (11 * 60) + 30 : (12 * 60) + 30;
+                break;
+            case 'PST': case 'PDT':
+                totalMinutes -= isDSTActive('America/Los_Angeles') ? (12 * 60) + 30 : (13 * 60) + 30;
+                break;
+            default:
+                resultDiv.textContent = 'Invalid time zone selection.';
+                return;
+        }
 
-    resultDiv.textContent = `Converted Time in ${timezone}: ${displayHours}:${displayMinutes} ${period}`;
-});
+        const usHours = (Math.floor(totalMinutes / 60) + 24) % 24;
+        const usMinutes = (totalMinutes % 60 + 60) % 60;
+        const period = usHours >= 12 ? 'P.M.' : 'A.M.';
+        const displayHours = ((usHours % 12) || 12).toString().padStart(2, '0');
+        const displayMinutes = usMinutes.toString().padStart(2, '0');
+
+        resultDiv.textContent = `Converted Time in ${timezone}: ${displayHours}:${displayMinutes} ${period}`;
+    });
+};
+
+window.onload = () => {
+    updateTimeZoneOptions('timezoneSelect');
+    updateTimeZoneOptions('timezoneSelect-1');
+    convertUSToIndia();
+    convertIndiaToUS();
+};
