@@ -17,3 +17,7 @@ This project addresses the limitations of existing tools that only convert the c
 
 ## Motivation 
 Scheduling meetings between clients and teammates in different time zones can be challenging. Existing tools mostly provide current-time conversions, but this tool allows users to convert any specified time with acurate 12 Hour Format.
+
+## Keyboard Shotcuts 
+- <kbd>Alt/Option</kbd> + <kbd>U</kbd> to convert from US to India
+- <kbd>Alt/Option</kbd> + <kbd>I</kbd> to convert from India to US
