@@ -13,6 +13,7 @@ This project addresses the limitations of existing tools that only convert the c
 -	 Handles both Standard and Daylight Savings automatically
 -	Can be installed as a PWA on mobile devices and computers for desktop- access.
 -	 lightweight and fast, built with accessibility and optimization in mind.
+-	 Keyboard shotcuts for quick navigation 
 
 ## Motivation 
 Scheduling meetings between clients and teammates in different time zones can be challenging. Existing tools mostly provide current-time conversions, but this tool allows users to convert any specified time with acurate 12 Hour Format.
