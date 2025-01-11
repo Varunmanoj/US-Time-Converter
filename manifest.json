@@ -26,5 +26,12 @@
     "categories": [
         "productivity",
         "utilities"
-    ]
+    ],
+    "launch_handler": {
+        "client_mode": [
+            "navigate-existing",
+            "auto"
+        ]
+    },
+    "handle_links": "preferred"
 }
