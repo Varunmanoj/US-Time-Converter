@@ -1,1 +1,22 @@
-{"short_name":"US-India Time Converter","name":"US-India Time Converter","icons":[{"src":"/assets/img/Appicons/iso/192.png?h=6135b738471c2801105abbda0e1dded9","type":"image/png","sizes":"192x192"},{"src":"/assets/img/US%20Time%20Converter%20App%20icon.png?h=01b67f8a1167582362d905d5d0bec60b","type":"image/png","sizes":"512x512"}],"start_url":"index.html","background_color":"#cbe3fa","theme_color":"#c85855","display":"standalone"}
+{
+    "short_name": "US-India Time Converter",
+    "name": "US-India Time Converter",
+    "icons": [
+        {
+            "src": "/assets/img/Appicons/iso/192.png?h=6135b738471c2801105abbda0e1dded9",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/assets/img/US%20Time%20Converter%20App%20icon.png?h=01b67f8a1167582362d905d5d0bec60b",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "index.html",
+    "background_color": "#cbe3fa",
+    "theme_color": "#c85855",
+    "display": "standalone",
+    "id": "uS-india-time-converter",
+    "description": "Use this simple and efficient time zone converter to seamlessly convert time from CST, EST, or PST to Indian Standard Time (IST). Ideal for scheduling across time zones with accurate 12-hour format results."
+}
