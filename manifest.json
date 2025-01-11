@@ -18,5 +18,12 @@
     "theme_color": "#c85855",
     "display": "standalone",
     "id": "uS-india-time-converter",
-    "description": "Use this simple and efficient time zone converter to seamlessly convert time from CST, EST, or PST to Indian Standard Time (IST). Ideal for scheduling across time zones with accurate 12-hour format results."
+    "description": "Use this simple and efficient time zone converter to seamlessly convert time from CST, EST, or PST to Indian Standard Time (IST). Ideal for scheduling across time zones with accurate 12-hour format results.",
+    "lang": "en",
+    "dir": "ltr",
+    "prefer_related_applications": false,
+    "categories": [
+        "productivity",
+        "utilities"
+    ]
 }
