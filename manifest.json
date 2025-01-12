@@ -17,7 +17,7 @@
     "background_color": "#cbe3fa",
     "theme_color": "#c85855",
     "display": "standalone",
-    "screenshots": [       
+    "screenshots": [
         {
             "src": "/assets/img/Screenshorts/Light-Mode.webp",
             "sizes": "1280x720",
@@ -53,5 +53,26 @@
             "form_factor": "wide",
             "label": "Showing All 4 Time zone options"
         }
+    ],
+    "description": "Use this simple and efficient time zone converter to seamlessly convert time from CST, EST, or PST to Indian Standard Time (IST). Ideal for scheduling across time zones with accurate 12-hour format results.",
+    "id": "uS--ndia-time-converter",
+    "dir": "ltr",
+    "lang": "en",
+    "orientation": "natural",
+    "shortcuts": [
+        {
+            "name": "Convert US to India",
+            "url": "https://us-time-converter.varunmanojkumar.in/#Us-to-india",
+            "description": "Convert US Time to India "
+        },
+        {
+            "name": "Convert India to US",
+            "url": "https://us-time-converter.varunmanojkumar.in/#india-to-us",
+            "description": "Convert India Time to US"
+        }
+    ],
+    "categories": [
+        "productivity",
+        "utilities"
     ]
 }
