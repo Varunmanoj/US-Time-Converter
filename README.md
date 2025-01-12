@@ -24,4 +24,5 @@ Scheduling meetings between clients and teammates in different time zones can be
 - <kbd>Alt/Option</kbd> + <kbd>U</kbd> to convert from India to US
 
 ## Demo Video 
-[![US India Time Converter](https://img.youtube.com/vi/qboh_oetFpY/0.jpg)](https://youtu.be/w19JPgrpim0)
+[![US India Time Converter](https://img.youtube.com/vi/w19JPgrpim0/0.jpg)](https://youtu.be/w19JPgrpim0)
+
