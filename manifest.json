@@ -1,1 +1,57 @@
-{"short_name":"US-India Time Converter","name":"US-India Time Converter","icons":[{"src":"/assets/img/Appicons/iso/192.png?h=6135b738471c2801105abbda0e1dded9","type":"image/png","sizes":"192x192"},{"src":"/assets/img/US%20Time%20Converter%20App%20icon.png?h=01b67f8a1167582362d905d5d0bec60b","type":"image/png","sizes":"512x512"}],"start_url":"index.html","background_color":"#cbe3fa","theme_color":"#c85855","display":"standalone"}
+{
+    "short_name": "US-India Time Converter",
+    "name": "US-India Time Converter",
+    "icons": [
+        {
+            "src": "/assets/img/Appicons/iso/192.png?h=6135b738471c2801105abbda0e1dded9",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/assets/img/US%20Time%20Converter%20App%20icon.png?h=01b67f8a1167582362d905d5d0bec60b",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "index.html",
+    "background_color": "#cbe3fa",
+    "theme_color": "#c85855",
+    "display": "standalone",
+    "screenshots": [       
+        {
+            "src": "/assets/img/Screenshorts/Light-Mode.webp",
+            "sizes": "1280x720",
+            "type": "image/webp",
+            "form_factor": "wide",
+            "label": "Light Mode"
+        },
+        {
+            "src": "/assets/img/Screenshorts/Dark-Mode.webp",
+            "sizes": "1280x720",
+            "type": "image/webp",
+            "form_factor": "wide",
+            "label": "Dark Mode"
+        },
+        {
+            "src": "/assets/img/Screenshorts/DST-Light.webp",
+            "sizes": "1280x720",
+            "type": "image/webp",
+            "form_factor": "wide",
+            "label": "Supports Day Light Savings in Light Mode"
+        },
+        {
+            "src": "/assets/img/Screenshorts/DST-Dark.webp",
+            "sizes": "1280x720",
+            "type": "image/webp",
+            "form_factor": "wide",
+            "label": "Supports Day Light savings in Dark Mode"
+        },
+        {
+            "src": "/assets/img/Screenshorts/All-4-Time-zones.webp",
+            "sizes": "1280x720",
+            "type": "image/webp",
+            "form_factor": "wide",
+            "label": "Showing All 4 Time zone options"
+        }
+    ]
+}
