@@ -13,8 +13,7 @@
             "sizes": "512x512"
         }
     ],
-    "start_url": "index.html",
-    "scope": "https://us-time-converter.varunmanojkumar.in""background_color": "#cbe3fa",
+    "start_url": "index.html",    
     "theme_color": "#c85855",
     "display": "standalone",
     "screenshots": [
