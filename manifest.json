@@ -14,41 +14,41 @@
         }
     ],
     "start_url": "index.html",
-    "background_color": "#cbe3fa",
+    "scope": "https://us-time-converter.varunmanojkumar.in""background_color": "#cbe3fa",
     "theme_color": "#c85855",
     "display": "standalone",
     "screenshots": [
         {
             "src": "/assets/img/Screenshorts/Light-Mode.webp",
-            "sizes": "1280x720",
+            "sizes": "1920x1080",
             "type": "image/webp",
             "form_factor": "wide",
             "label": "Light Mode"
         },
         {
             "src": "/assets/img/Screenshorts/Dark-Mode.webp",
-            "sizes": "1280x720",
+            "sizes": "1920x1080",
             "type": "image/webp",
             "form_factor": "wide",
             "label": "Dark Mode"
         },
         {
             "src": "/assets/img/Screenshorts/DST-Light.webp",
-            "sizes": "1280x720",
+            "sizes": "1920x1080",
             "type": "image/webp",
             "form_factor": "wide",
             "label": "Supports Day Light Savings in Light Mode"
         },
         {
             "src": "/assets/img/Screenshorts/DST-Dark.webp",
-            "sizes": "1280x720",
+            "sizes": "1920x1080",
             "type": "image/webp",
             "form_factor": "wide",
             "label": "Supports Day Light savings in Dark Mode"
         },
         {
             "src": "/assets/img/Screenshorts/All-4-Time-zones.webp",
-            "sizes": "1280x720",
+            "sizes": "1920x1080",
             "type": "image/webp",
             "form_factor": "wide",
             "label": "Showing All 4 Time zone options"
