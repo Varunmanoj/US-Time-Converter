@@ -15,6 +15,7 @@
     ],
     "start_url": "index.html",
     "scope": "/",
+    "background_color": "#cbe3fa",
     "theme_color": "#c85855",
     "display": "standalone",
     "screenshots": [
