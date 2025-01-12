@@ -1,0 +1,100 @@
+{
+    "short_name": "US-India Time Converter",
+    "name": "US-India Time Converter",
+    "icons": [
+        {
+            "src": "/assets/img/Appicons/iso/192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/assets/img/US%20Time%20Converter%20App%20icon.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "index.html",
+    "scope": "/",
+    "background_color": "#cbe3fa",
+    "theme_color": "#c85855",
+    "display": "standalone",
+    "screenshots": [
+        {
+            "src": "/assets/img/Screenshorts/Light-Mode.webp",
+            "sizes": "1920x1080",
+            "type": "image/webp",
+            "form_factor": "wide",
+            "label": "Light Mode"
+        },
+        {
+            "src": "/assets/img/Screenshorts/Dark-Mode.webp",
+            "sizes": "1920x1080",
+            "type": "image/webp",
+            "form_factor": "wide",
+            "label": "Dark Mode"
+        },
+        {
+            "src": "/assets/img/Screenshorts/DST-Light.webp",
+            "sizes": "1920x1080",
+            "type": "image/webp",
+            "form_factor": "wide",
+            "label": "Supports Day Light Savings in Light Mode"
+        },
+        {
+            "src": "/assets/img/Screenshorts/DST-Dark.webp",
+            "sizes": "1920x1080",
+            "type": "image/webp",
+            "form_factor": "wide",
+            "label": "Supports Day Light savings in Dark Mode"
+        },
+        {
+            "src": "/assets/img/Screenshorts/All-4-Time-zones.webp",
+            "sizes": "1920x1080",
+            "type": "image/webp",
+            "form_factor": "wide",
+            "label": "Showing All 4 Time zone options"
+        }
+    ],
+    "description": "Use this simple and efficient time zone converter to seamlessly convert time from CST, EST, or PST to Indian Standard Time (IST). Ideal for scheduling across time zones with accurate 12-hour format results.",
+    "id": "uS--ndia-time-converter",
+    "dir": "ltr",
+    "lang": "en",
+    "orientation": "natural",
+    "shortcuts": [
+        {
+            "name": "Convert US to India",
+            "url": "https://us-time-converter.varunmanojkumar.in/#Us-to-india",
+            "description": "Convert US Time to India ",
+            "icons": [
+                {
+                    "src": "/assets/img/Appicons/iso/192.png",
+                    "sizes": "192x192"
+                }
+            ]
+        },
+        {
+            "name": "Convert India to US",
+            "url": "https://us-time-converter.varunmanojkumar.in/#india-to-us",
+            "description": "Convert India Time to US",
+            "icons": [
+                {
+                    "src": "/assets/img/Appicons/iso/192.png",
+                    "sizes": "192x192"
+                }
+            ]
+        }
+    ],
+    "categories": [
+        "productivity",
+        "utilities"
+    ],
+    "prefer_related_applications": false,
+    "launch_handler": {
+        "client_mode": [
+            "navigate-existing",
+            "auto"
+        ]
+    },
+    "iarc_rating_id": "7f5dad47-5fac-4f99-969a-d20713d02994"
+
+}
