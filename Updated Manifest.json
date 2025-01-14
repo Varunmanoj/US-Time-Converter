@@ -39,20 +39,27 @@
             "type": "image/webp",
             "form_factor": "wide",
             "label": "Supports Day Light Savings in Light Mode"
-        },
-        {
-            "src": "/assets/img/Screenshorts/DST-Dark.webp",
-            "sizes": "1920x1080",
-            "type": "image/webp",
-            "form_factor": "wide",
-            "label": "Supports Day Light savings in Dark Mode"
-        },
+        },        
         {
             "src": "/assets/img/Screenshorts/All-4-Time-zones.webp",
             "sizes": "1920x1080",
             "type": "image/webp",
             "form_factor": "wide",
             "label": "Showing All 4 Time zone options"
+        },
+        {
+            "src": "/assets/img/Screenshorts/Current-Local-Time.webp",
+            "sizes": "1920x1080",
+            "type": "image/webp",
+            "form_factor": "wide",
+            "label": "Showing Local Time in all 4 time zone"
+        },
+        {
+            "src": "/assets/img/Screenshorts/How-It-works-Light.webp",
+            "sizes": "1920x1080",
+            "type": "image/webp",
+            "form_factor": "wide",
+            "label": "Showing Local Time in all 4 time zone"
         }
     ],
     "description": "Use this simple and efficient time zone converter to seamlessly convert time from CST, EST, or PST to Indian Standard Time (IST). Ideal for scheduling across time zones with accurate 12-hour format results.",
