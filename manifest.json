@@ -39,14 +39,7 @@
             "type": "image/webp",
             "form_factor": "wide",
             "label": "Supports Day Light Savings in Light Mode"
-        },        
-        {
-            "src": "/assets/img/Screenshorts/All-4-Time-zones.webp",
-            "sizes": "1920x1080",
-            "type": "image/webp",
-            "form_factor": "wide",
-            "label": "Showing All 4 Time zone options"
-        },
+        },                
         {
             "src": "/assets/img/Screenshorts/Current-Local-Time.webp",
             "sizes": "1920x1080",

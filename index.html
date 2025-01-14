@@ -103,8 +103,8 @@
     <link rel="icon" type="image/png" sizes="512x512" href="assets/img/US%20Time%20Converter%20App%20icon.png?h=01b67f8a1167582362d905d5d0bec60b">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=48d1501b1e398de1d9653bb8f91ce33e">
     <link rel="manifest" href="manifest.json?h=31f4da394f1be982936686b4f25e9caa" crossorigin="use-credentials">
-    <link rel="stylesheet" href="assets/css/News%20Cycle.css?h=5a6abbf1bce1e172aa2b053a36fef3da">
-    <link rel="stylesheet" href="assets/css/Poppins.css?h=9fc5268e36717a943007c68bae0113bc">
+    <link rel="stylesheet" href="assets/css/News%20Cycle.css?h=19c1eaf59da2718789e10a0619493990">
+    <link rel="stylesheet" href="assets/css/Poppins.css?h=229513e63aca36d9463f200a00a818a3">
     <link rel="stylesheet" href="assets/css/aos.min.css?h=ea67d3638a91cd05d22f1b4e31c7b746">
     <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css?h=befd8a398792e305b7ffd4a176b5b585">
     <link rel="stylesheet" href="assets/css/styles.css?h=0159f4c97f465b343cc19d17510524c4">
@@ -221,6 +221,14 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" role="tab"><button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-5" aria-expanded="true" aria-controls="accordion-1 .item-5">When Does US Observe Day Light Savings Time</button></h2>
+                                <div class="accordion-collapse collapse show item-5" role="tabpanel" data-bs-parent="#accordion-1">
+                                    <div class="accordion-body">
+                                        <p>Daylight Saving Time (DST) is the practice of setting clocks forward by one hour during warmer months to extend evening daylight and reduce energy consumption. It begins in the U.S. on the <strong>second Sunday in March </strong>and ends on the <strong>first Sunday in November</strong>, with clocks moving forward in spring and back in autumn.&nbsp;</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer"><button class="btn btn-outline-primary focus-ring" type="button" data-bs-dismiss="modal">Close</button></div>
@@ -268,44 +276,44 @@
                 </div>
             </section>
         </div>
-    </main>
-    <section id="Current-Local-Time" class="Section">
-        <div class="container">
-            <h1 class="text-center Section">Current&nbsp; Local Time</h1>
-            <div class="table-responsive">
-                <table class="table table-borderless">
-                    <thead>
-                        <tr>
-                            <th class="table-primary">Time Zone</th>
-                            <th class="table-primary">Time</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>India Time</th>
-                            <td id="istTime">Cell 2</td>
-                        </tr>
-                        <tr>
-                            <th>Central Time</th>
-                            <td id="cstTime">Cell 2</td>
-                        </tr>
-                        <tr>
-                            <th>Eastern Time</th>
-                            <td id="estTime">Cell 4</td>
-                        </tr>
-                        <tr>
-                            <th>Mountain Time</th>
-                            <td id="mstTime">Cell 2</td>
-                        </tr>
-                        <tr>
-                            <th>Pacific Time</th>
-                            <td id="pstTime">Cell 2</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <section id="Current-Local-Time" class="Section">
+            <div class="container">
+                <h1 class="text-center Section">Current&nbsp; Local Time</h1>
+                <div class="table-responsive">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th class="table-primary">Time Zone</th>
+                                <th class="table-primary">Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>India Time</th>
+                                <td id="istTime">Cell 2</td>
+                            </tr>
+                            <tr>
+                                <th>Central Time</th>
+                                <td id="cstTime">Cell 2</td>
+                            </tr>
+                            <tr>
+                                <th>Eastern Time</th>
+                                <td id="estTime">Cell 4</td>
+                            </tr>
+                            <tr>
+                                <th>Mountain Time</th>
+                                <td id="mstTime">Cell 2</td>
+                            </tr>
+                            <tr>
+                                <th>Pacific Time</th>
+                                <td id="pstTime">Cell 2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-    </section><script>
+        </section>
+    </main><script>
     // Register Service Worker
 // Check if service workers are supported in the browser
 if ('serviceWorker' in navigator) {
