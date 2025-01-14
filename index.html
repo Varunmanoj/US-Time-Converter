@@ -103,11 +103,11 @@
     <link rel="icon" type="image/png" sizes="512x512" href="assets/img/US%20Time%20Converter%20App%20icon.png?h=01b67f8a1167582362d905d5d0bec60b">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=48d1501b1e398de1d9653bb8f91ce33e">
     <link rel="manifest" href="manifest.json?h=31f4da394f1be982936686b4f25e9caa" crossorigin="use-credentials">
-    <link rel="stylesheet" href="assets/css/News%20Cycle.css?h=9c0091b829ea9137376d18491815851d">
-    <link rel="stylesheet" href="assets/css/Poppins.css?h=da74cadcb2f34bb0b022425e97a15d9b">
+    <link rel="stylesheet" href="assets/css/News%20Cycle.css?h=6895c856fc49a21386a8057bcaecd45e">
+    <link rel="stylesheet" href="assets/css/Poppins.css?h=896f28bd6939d2851843e3f6937524ac">
     <link rel="stylesheet" href="assets/css/aos.min.css?h=ea67d3638a91cd05d22f1b4e31c7b746">
     <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css?h=befd8a398792e305b7ffd4a176b5b585">
-    <link rel="stylesheet" href="assets/css/styles.css?h=64df76e6e07a3848dd8a5ca116062e40">
+    <link rel="stylesheet" href="assets/css/styles.css?h=0159f4c97f465b343cc19d17510524c4">
 </head>
 
 <body>
@@ -134,7 +134,7 @@
                                         </svg>Auto</a></div>
                             </div>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#">How It works&nbsp;</a></li>
+                        <li class="nav-item"><a class="nav-link focus-ring" href="#" data-bs-target="#modal-2" data-bs-toggle="modal">How It works&nbsp;</a></li>
                     </ul><a class="btn btn-outline-primary focus-ring ms-md-2" role="button" href="#" rel="help" data-bs-target="#modal-1" data-bs-toggle="modal">Readme</a>
                 </div>
             </div>
@@ -153,7 +153,7 @@
                             <li>Converts specified times between U.S. time zones and IST</li>
                             <li>Supports all four U.S. time zones—Central , Eastern , Mountain , and Pacific Times</li>
                             <li>Shows Local Time across 4 time zones</li>
-                            <li>App Support</li>
+                            <li>Offline Support</li>
                             <li>Keyboard shortcuts for quick navigation</li>
                         </ul>
                         <h2>Keyboard Shortcuts</h2>
@@ -162,9 +162,68 @@
                             <li><strong>ALT/Option +U </strong>to Convert from India to US</li>
                             <li><strong>ALT/Option +1 </strong>to Enter US Time</li>
                             <li><strong>ALT/Option +2 </strong>to Enter India Time</li>
+                            <li><strong>ALT/Option +3 </strong>to View Current Time</li>
                         </ul>
                     </div>
                     <div class="modal-footer"><button class="btn btn-outline-primary focus-ring" type="button" data-bs-dismiss="modal" accesskey="c">Close</button></div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" role="dialog" tabindex="-1" id="modal-2">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Time Conversion Info</h4><button class="btn-close focus-ring" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="accordion" role="tablist" id="accordion-1">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-1" aria-expanded="false" aria-controls="accordion-1 .item-1">Central Time (CT) to Indian Standard Time (IST)</button></h2>
+                                <div class="accordion-collapse collapse item-1" role="tabpanel" data-bs-parent="#accordion-1">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li><strong>Standard Time: </strong>IST is 11 hours and 30 minutes ahead of Central Standard Time (CST).</li>
+                                            <li><strong>Daylight Saving Time (DST): </strong>During DST, IST is 10 hours and 30 minutes ahead of Central Daylight Time (CDT).</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-2" aria-expanded="false" aria-controls="accordion-1 .item-2">Eastern Time (ET) to Indian Standard Time (IST)</button></h2>
+                                <div class="accordion-collapse collapse item-2" role="tabpanel" data-bs-parent="#accordion-1">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li><strong>Standard Time</strong>: IST is 10 hours and 30 minutes ahead of Eastern Standard Time (EST).</li>
+                                            <li><strong>Daylight Saving Time (DST): </strong>During DST, IST is 9 hours and 30 minutes ahead of Eastern Daylight Time (EDT).</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-3" aria-expanded="false" aria-controls="accordion-1 .item-3">Mountain Time (MT) to Indian Standard Time (IST)</button></h2>
+                                <div class="accordion-collapse collapse item-3" role="tabpanel" data-bs-parent="#accordion-1">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li><strong>Standard Time: </strong>IST is 12 hours and 30 minutes ahead of Mountain Standard Time (MST).</li>
+                                            <li><strong>Daylight Saving Time (DST): </strong>During DST, IST is 11 hours and 30 minutes ahead of Mountain Daylight Time (MDT).</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" role="tab"><button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-1 .item-4" aria-expanded="false" aria-controls="accordion-1 .item-4">Pacific Time (PT) to Indian Standard Time (IST)</button></h2>
+                                <div class="accordion-collapse collapse item-4" role="tabpanel" data-bs-parent="#accordion-1">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li><strong>Standard Time: </strong>IST is 13 hours and 30 minutes ahead of Pacific Standard Time (PST).</li>
+                                            <li><strong>Daylight Saving Time (DST): </strong>During DST, IST is 12 hours and 30 minutes ahead of Pacific Daylight Time (PDT).</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer"><button class="btn btn-outline-primary focus-ring" type="button" data-bs-dismiss="modal">Close</button></div>
                 </div>
             </div>
         </div>
@@ -178,7 +237,7 @@
                                 <h2 class="text-center">US to India&nbsp;</h2>
                                 <form method="get" enctype="application/x-www-form-urlencoded">
                                     <!-- Start: US Time -->
-                                    <div class="Section"><label class="form-label" for="timeInput">Enter US Time</label><input class="focus-ring form-control form-control-lg" id="timeInput" type="time" name="us-time" required=""></div><!-- End: US Time -->
+                                    <div class="Section"><label class="form-label" for="timeInput">Enter US Time</label><input class="focus-ring form-control form-control-lg" id="timeInput" type="time" name="us-time" aria-label="Enter US Time"></div><!-- End: US Time -->
                                     <!-- Start: Time Converter -->
                                     <div class="Section"><label class="form-label" for="timezoneSelect">Select Time Zone</label><select class="focus-ring form-select form-select-lg" id="timezoneSelect" name="timezoneSelect"></select></div><!-- End: Time Converter -->
                                     <div class="Section"><button class="btn btn-primary btn-lg focus-ring" id="convertButton" type="button" accesskey="I">Convert to <span style="text-decoration: underline;">I</span>ST</button></div><!-- Start: Result Regin -->
@@ -195,7 +254,7 @@
                                 <h2 class="text-center">India to US</h2>
                                 <form method="get" enctype="application/x-www-form-urlencoded">
                                     <!-- Start: US Time -->
-                                    <div class="Section"><label class="form-label" for="timeInput">Enter India Time</label><input class="focus-ring form-control form-control-lg" id="timeInput-1" type="time" name="us-time" required=""></div><!-- End: US Time -->
+                                    <div class="Section"><label class="form-label" for="timeInput-1">Enter India Time</label><input class="focus-ring form-control form-control-lg" id="timeInput-1" type="time" name="india-time" aria-label="Enter India Time"></div><!-- End: US Time -->
                                     <!-- Start: Time Converter -->
                                     <div class="Section"><label class="form-label" for="timezoneSelect">Select Time Zone</label><select class="focus-ring form-select form-select-lg" id="timezoneSelect-1" name="timezoneSelect"></select></div><!-- End: Time Converter -->
                                     <div class="Section"><button class="btn btn-primary btn-lg focus-ring" id="convertButton-1" type="button" accesskey="U">Convert to <span style="text-decoration: underline;">U</span>S</button></div><!-- Start: Result Regin -->
@@ -210,7 +269,7 @@
             </section>
         </div>
     </main>
-    <section id="Current-Local-Time">
+    <section id="Current-Local-Time" class="Section">
         <div class="container">
             <h1 class="text-center Section">Current&nbsp; Local Time</h1>
             <div class="table-responsive">
