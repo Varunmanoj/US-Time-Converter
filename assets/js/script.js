@@ -4,7 +4,7 @@ if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         // Register the service worker when the page is loaded
         navigator.serviceWorker
-            .register('/assets/js/service-worker.js')  // Path to your service-worker.js
+            .register('/assets/js/service-worker.js', { scope: '/' })  // Path to your service-worker.js
             .then((registration) => {
                 console.log('Service Worker registered with scope: ', registration.scope);
             })
@@ -13,7 +13,6 @@ if ('serviceWorker' in navigator) {
             });
     });
 }
-
 
 
 // Main business logic begins
