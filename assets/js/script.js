@@ -1,20 +1,3 @@
-// Register Service Worker
-// Check if service workers are supported in the browser
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        // Register the service worker when the page is loaded
-        navigator.serviceWorker
-            .register('/service-worker.js', { scope: '/' })  // Path to your service-worker.js
-            .then((registration) => {
-                console.log('Service Worker registered with scope: ', registration.scope);
-            })
-            .catch((error) => {
-                console.error('Service Worker registration failed: ', error);
-            });
-    });
-}
-
-
 // Main business logic begins
 
 const isDSTActive = (timeZone) => {
