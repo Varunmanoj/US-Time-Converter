@@ -16,6 +16,7 @@ This project addresses the limitations of existing tools that only convert the c
 -	 Lightweight and fast, built with accessibility and optimization in mind.
 -	 Keyboard shotcuts for quick navigation 
 -   Offline Supports
+-   Knolege Article about the various time Conversions
 
 ## Motivation 
 Scheduling meetings between clients and teammates in different time zones can be challenging. Existing tools mostly provide current-time conversions, but this tool allows users to convert any specified time with acurate 12 Hour Format.
