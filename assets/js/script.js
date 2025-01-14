@@ -19,14 +19,14 @@ const updateTimeZoneOptions = (dropdownId) => {
         const option = document.createElement('option');
         if (isDSTActive(zone.tz)) {
             option.value = zone.dst;
-            option.textContent = `${zone.dst} - ${zone.dst === 'CDT' ? 'Central Daylight Saving Time' : 
-                zone.dst === 'EDT' ? 'Eastern Daylight Saving Time' : 
-                zone.dst === 'MDT' ? 'Mountain Daylight Saving Time' : 'Pacific Daylight Saving Time'}`;
+            option.textContent = `${zone.dst} - ${zone.dst === 'CDT' ? 'Central Daylight Saving Time' :
+                zone.dst === 'EDT' ? 'Eastern Daylight Saving Time' :
+                    zone.dst === 'MDT' ? 'Mountain Daylight Saving Time' : 'Pacific Daylight Saving Time'}`;
         } else {
             option.value = zone.std;
-            option.textContent = `${zone.std} - ${zone.std === 'CST' ? 'Central Standard Time' : 
-                zone.std === 'EST' ? 'Eastern Standard Time' : 
-                zone.std === 'MST' ? 'Mountain Standard Time' : 'Pacific Standard Time'}`;
+            option.textContent = `${zone.std} - ${zone.std === 'CST' ? 'Central Standard Time' :
+                zone.std === 'EST' ? 'Eastern Standard Time' :
+                    zone.std === 'MST' ? 'Mountain Standard Time' : 'Pacific Standard Time'}`;
         }
         dropdown.appendChild(option);
     });
@@ -122,3 +122,31 @@ window.onload = () => {
     convertUSToIndia();
     convertIndiaToUS();
 };
+
+
+
+// Update Local time 
+function updateTime() {
+    const timeZones = {
+        ist: "Asia/Kolkata",
+        cst: "America/Chicago",
+        est: "America/New_York",
+        mst: "America/Denver",
+        pst: "America/Los_Angeles",
+    };
+
+    const options = { hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: true };
+
+    // Update each time zone
+    document.getElementById("istTime").innerText = new Intl.DateTimeFormat("en-US", { ...options, timeZone: timeZones.ist }).format(new Date());
+    document.getElementById("cstTime").innerText = new Intl.DateTimeFormat("en-US", { ...options, timeZone: timeZones.cst }).format(new Date());
+    document.getElementById("estTime").innerText = new Intl.DateTimeFormat("en-US", { ...options, timeZone: timeZones.est }).format(new Date());
+    document.getElementById("mstTime").innerText = new Intl.DateTimeFormat("en-US", { ...options, timeZone: timeZones.mst }).format(new Date());
+    document.getElementById("pstTime").innerText = new Intl.DateTimeFormat("en-US", { ...options, timeZone: timeZones.pst }).format(new Date());
+}
+
+// Update time every second
+setInterval(updateTime, 1000);
+
+// Initial call to populate table immediately
+updateTime();
