@@ -3,16 +3,22 @@
 const CACHE_NAME = 'us-time-converter-v1';
 const URLS_TO_CACHE = [
   '/', // Root
-  '/index.html',
-  '/manifest.json',
-  '/service-worker.js',
+  '/index.html', 
+  '/manifest.json', // Manifest File
+  '/service-worker.js', // Service Worker
+  // CSS files
   '/assets/bootstrap/bootstrap.min.css',
   '/assets/bootstrap/bootstrap.min.js',
   '/assets/css/Navbar-Right-Links-icons.css',
   '/assets/css/styles.css',
+  '/assets/css/aos.min.css',
+  '/assets/css/News Cycle.css',
+  '/assets/css/Poppins.css',
+  // JS Files
   '/assets/js/bs-init.js',
   '/assets/js/script.js',
   '/assets/js/aos.min.js',
+  // Font Files
   '/assets/fonts/News Cycle-953c26826a31e3c5c07e672ff04835c6.woff2',
   '/assets/fonts/News Cycle-9712f0865119b80d36b1cab221c04251.woff2',
   '/assets/fonts/News Cycle-b63a68bbde9a25bc3db07ac33b076656.woff2',
