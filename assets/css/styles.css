@@ -21,6 +21,7 @@
 .Section.answer-region {
   background: rgba(96,170,239,0.33);
   border-radius: 10px;
+  margin-left: 1rem;
 }
 
 @media (min-width: 300px) {
