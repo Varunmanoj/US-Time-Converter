@@ -5,14 +5,12 @@
         {
             "src": "/assets/img/Appicons/iso/192.png",
             "type": "image/png",
-            "sizes": "192x192",
-            "purpose": "any maskable"
+            "sizes": "192x192",            
         },
         {
             "src": "/assets/img/US%20Time%20Converter%20App%20icon.png",
             "type": "image/png",
             "sizes": "512x512",
-            "purpose": "any maskable"
         }
     ],
     "start_url": "/",
