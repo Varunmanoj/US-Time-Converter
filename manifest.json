@@ -61,7 +61,7 @@
     "id": "uS--ndia-time-converter",
     "dir": "ltr",
     "lang": "en",
-    "orientation": "natural",
+    "orientation": "any",
     "shortcuts": [
         {
             "name": "Convert US to India",
