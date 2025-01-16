@@ -11,8 +11,14 @@
         {
             "src": "/assets/img/US%20Time%20Converter%20App%20icon.png",
             "type": "image/png",
-            "sizes": "512x512"
-
+            "sizes": "512x512",
+            "purpose": "any"
+        },
+        {
+            "src": "/assets/img/Appicons/android/play_store_512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "maskable"
         }
     ],
     "start_url": "/",
@@ -61,7 +67,7 @@
     "id": "uS--ndia-time-converter",
     "dir": "ltr",
     "lang": "en",
-    "orientation": "any",
+    "orientation": "natural",
     "shortcuts": [
         {
             "name": "Convert US to India",
