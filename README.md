@@ -2,8 +2,6 @@
 Use this simple and efficient time zone converter to seamlessly convert time from CST, EST, or PST to Indian Standard Time (IST). Ideal for scheduling across time zones with accurate 12-hour format results.
 
 ## Overview
-Here is the updated project overview:  
-
 The U.S. Time Converter is a progressive web app (PWA) designed to help users convert any user-specified time between the four U.S. time zones—Central Time, Eastern Time, Mountain Time, and Pacific Time—and Indian Standard Time (IST). The app also displays the current local time in all four U.S. time zones, providing users with real-time context. With offline support, the app ensures functionality even without an active internet connection. This project addresses the limitations of existing tools that only convert the current time and is particularly useful for scheduling meetings and coordinating across time zones
 
 ## Features
