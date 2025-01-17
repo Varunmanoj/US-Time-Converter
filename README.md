@@ -12,8 +12,8 @@ The U.S. Time Converter is a progressive web app (PWA) designed to help users co
 - Dark Mode: Choose a theme that suits your preference for a more personalized experience.
 - 	Keyboard Shortcuts: Quickly navigate between different sections of the app with convenient keyboard shortcuts.
 
-## Motivation 
-Scheduling meetings between clients and teammates in different time zones can be challenging. Existing tools mostly provide current-time conversions, but this tool allows users to convert any specified time with acurate 12 Hour Format.
+## Why Choose U.S. Time Converter?
+Unlike traditional tools, this app goes beyond converting the current time. It empowers users to plan ahead, making it perfect for professionals, students, and anyone coordinating across multiple regions.
 
 ## Keyboard Shotcuts 
 - <kbd>Alt/Option</kbd> + <kbd>I</kbd> to convert from US to India
