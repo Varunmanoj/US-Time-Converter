@@ -23,5 +23,7 @@ Scheduling meetings between clients and teammates in different time zones can be
 
 
 ## Demo Video 
+### Desktop
 [![US India Time Converter](https://img.youtube.com/vi/H8CQAofF3Fc/0.jpg)](https://youtu.be/H8CQAofF3Fc)
-
+### Mobile
+[![US India Time Converter](https://img.youtube.com/vi/nLqgBAV9ZC0/0.jpg)](https://youtu.be/nLqgBAV9ZC0)
