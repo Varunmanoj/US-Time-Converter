@@ -5,14 +5,20 @@
         {
             "src": "/assets/img/Appicons/iso/192.png",
             "type": "image/png",
-            "sizes": "192x192",
-            "purpose": "any maskable"
+            "sizes": "192x192"
+            
         },
         {
             "src": "/assets/img/US%20Time%20Converter%20App%20icon.png",
             "type": "image/png",
             "sizes": "512x512",
-            "purpose": "any maskable"
+            "purpose": "any"
+        },
+        {
+            "src": "/assets/img/Appicons/android/play_store_512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "maskable"
         }
     ],
     "start_url": "/",
@@ -61,7 +67,7 @@
     "id": "uS--ndia-time-converter",
     "dir": "ltr",
     "lang": "en",
-    "orientation": "natural",
+    "orientation": "any",
     "shortcuts": [
         {
             "name": "Convert US to India",
@@ -97,6 +103,10 @@
             "auto"
         ]
     },
-    "iarc_rating_id": "7f5dad47-5fac-4f99-969a-d20713d02994"
+    "iarc_rating_id": "7f5dad47-5fac-4f99-969a-d20713d02994",
+    "display_override": [
+    "standalone",
+    "window-controls-overlay"
+  ]
 
 }
