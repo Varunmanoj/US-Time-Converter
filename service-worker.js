@@ -35,6 +35,22 @@ const URLS_TO_CACHE = [
   '/assets/fonts/Poppins-a48e3370be978e12258161118d6c2f08.woff2',
   '/assets/fonts/Poppins-b57e21c9fab8a74acb6e61f5b9446872.woff2',
   '/assets/fonts/Poppins-cd41308b36a56094f6fe209a02995d53.woff2',  
+  '/assets/fonts/fa-brands-400.eot',
+  '/assets/fonts/fa-brands-400.svg',
+  '/assets/fonts/fa-brands-400.ttf',
+  '/assets/fonts/fa-brands-400.woff',
+  '/assets/fonts/fa-brands-400.woff2',  
+  '/assets/fonts/fa-regular-400.eot',
+  '/assets/fonts/fa-regular-400.svg',
+  '/assets/fonts/fa-regular-400.ttf',
+  '/assets/fonts/fa-regular-400.woff',
+  '/assets/fonts/fa-regular-400.woff2',
+  '/assets/fonts/fa-solid-900.eot',
+  '/assets/fonts/fa-solid-900.svg',
+  '/assets/fonts/fa-solid-900.ttf',
+  '/assets/fonts/fa-solid-900.woff',
+  '/assets/fonts/fa-solid-900.woff2',
+  '/assets/fonts/fontawesome-all.min.css',
 ];
 
 // Install Service Worker
