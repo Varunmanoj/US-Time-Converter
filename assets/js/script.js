@@ -1,3 +1,30 @@
+// Hide the Play buttons on android and Ios 
+function hidePlayIcons() {
+    // Detect the platform using the userAgent string
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isAndroid = userAgent.includes("android");
+    const isIOS = /iphone|ipad|ipod/.test(userAgent) && 'ontouchend' in document;
+
+    // IDs of the play icons
+    const playIcons = ["play-ist-time", "play-us-time","voice-settings-dialog"];
+
+    // If the platform is Android or iOS, hide the icons
+    if (isAndroid || isIOS) {
+        playIcons.forEach((id) => {
+            const element = document.getElementById(id);
+            if (element) {
+                element.style.display = "none"; // Hide the element
+            }
+        });
+    }
+}
+
+// Call the function on page load
+document.addEventListener("DOMContentLoaded", hidePlayIcons);
+
+
+
+
 // Main business logic begins
 
 const isDSTActive = (timeZone) => {
@@ -152,3 +179,134 @@ setInterval(updateTime, 1000);
 
 // Initial call to populate table immediately
 updateTime();
+
+
+
+// Speak the conerted time aloud 
+// Get the play button, result paragraph, and voice select dropdown
+const playButtonIst = document.getElementById('play-ist-time');
+const resultParagraphIst = document.getElementById('result');
+const playButtonUs = document.getElementById('play-us-time');
+const resultParagraphUs = document.getElementById('result-1');
+const voiceSelect = document.getElementById('voice-select');
+
+// Variable to hold available voices
+let voices = [];
+
+// Function to populate the voice selection dropdown
+function populateVoices() {
+    voices = window.speechSynthesis.getVoices(); // Get the list of available voices
+
+    // Clear any existing options in the dropdown
+    voiceSelect.innerHTML = '';
+
+    // Add an option to select "Default Voice"
+    const defaultOption = document.createElement('option');
+    defaultOption.value = 'default';
+    defaultOption.innerText = 'Select Voice';
+    voiceSelect.appendChild(defaultOption);
+
+    // Populate the dropdown with the available voices
+    voices.forEach((voice, index) => {
+        const option = document.createElement('option');
+        option.value = index; // Store the index of the voice
+        option.innerText = voice.name; // Set the voice name as the display text
+        voiceSelect.appendChild(option);
+    });
+
+    // Retrieve and set the stored voice selection (if exists)
+    const storedVoiceIndex = localStorage.getItem('selectedVoiceIndex');
+    if (storedVoiceIndex !== null && storedVoiceIndex < voices.length) {
+        voiceSelect.value = storedVoiceIndex; // Set the stored voice index as selected
+    } else {
+        // Set the default voice based on the browser's default voice if no stored value
+        const defaultVoiceIndex = voices.findIndex(voice => voice.default);
+        if (defaultVoiceIndex !== -1) {
+            voiceSelect.value = defaultVoiceIndex; // Set the default voice in the dropdown
+        }
+    }
+}
+
+// Function to announce the text inside the paragraph based on the button clicked
+function announceResult(button, paragraph) {
+    const text = paragraph.innerText.trim(); // Get the text and remove extra spaces
+
+    // Check if the text is empty
+    if (!text) {
+        alert("No text to announce!");
+        return;
+    }
+
+    // Get the selected voice from the dropdown
+    const selectedVoiceIndex = voiceSelect.value;
+
+    let selectedVoice = voices[selectedVoiceIndex] || voices[0]; // Default to null if no voice selected
+
+    if (!selectedVoice && voiceSelect.value !== 'default') {
+        alert("Invalid voice selection.");
+        return;
+    }
+
+    // Create a new SpeechSynthesisUtterance object with the text
+    const speech = new SpeechSynthesisUtterance(text);
+
+    // Set the selected voice if available
+    if (selectedVoice) {
+        speech.voice = selectedVoice;
+    }
+
+    // Optionally set voice properties like pitch and rate
+    speech.pitch = 1; // Normal pitch
+    speech.rate = 1; // Normal speaking rate
+
+    // Speak the text
+    window.speechSynthesis.speak(speech);
+}
+
+// Store the selected voice index in localStorage when the user changes the selection
+voiceSelect.addEventListener('change', () => {
+    const selectedVoiceIndex = voiceSelect.value;
+    localStorage.setItem('selectedVoiceIndex', selectedVoiceIndex); // Store the selected voice index
+});
+
+// Function to handle the keyboard shortcut
+function handleKeyboardShortcut(event, button, paragraph) {
+    // Check for 'Ctrl + U' (Windows) or 'Cmd + U' (Mac) key combination for the second button
+    if ((event.ctrlKey || event.metaKey) && event.key === 'u') {
+        event.preventDefault(); // Prevent default browser behavior for 'Ctrl/Cmd + U'
+        announceResult(button, paragraph); // Trigger the announcement for the second button
+    }
+}
+
+// Make sure the buttons and paragraphs exist and add event listeners
+if (playButtonIst && resultParagraphIst && playButtonUs && resultParagraphUs && voiceSelect) {
+    // Trigger speech announcement on the first play button click (for IST)
+    playButtonIst.addEventListener('click', () => announceResult(playButtonIst, resultParagraphIst));
+
+    // Trigger speech announcement on the second play button click (for US)
+    playButtonUs.addEventListener('click', () => announceResult(playButtonUs, resultParagraphUs));
+
+    // Add keyboard shortcut (Ctrl/Cmd + I) for announcing the text for IST
+    document.addEventListener('keydown', function (event) {
+        if ((event.ctrlKey || event.metaKey) && event.key === 'i') {
+            event.preventDefault(); // Prevent default browser behavior for 'Ctrl/Cmd + I'
+            announceResult(playButtonIst, resultParagraphIst); // Trigger the announcement for IST
+        }
+    });
+
+    // Add keyboard shortcut (Ctrl/Cmd + U) for announcing the text for US
+    document.addEventListener('keydown', function (event) {
+        handleKeyboardShortcut(event, playButtonUs, resultParagraphUs); // Trigger the announcement for US
+    });
+
+    // Populate the voice selection dropdown on page load
+    // window.speechSynthesis.onvoiceschanged = populateVoices;
+
+    // Ensure voices are fully loaded before populating the dropdown
+    window.speechSynthesis.onvoiceschanged = function () {
+        populateVoices(); // Populate voice options once voices are available
+    };
+
+} else {
+    console.error('One or more elements (buttons, paragraphs, or voice select) were not found.');
+}

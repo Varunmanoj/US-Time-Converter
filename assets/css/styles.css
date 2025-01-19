@@ -37,15 +37,16 @@
 }
 
 @media (min-width: 300px) {
-  #theme-switcher-nav-item {
+  .nav-item-space {
     margin-top: 10px;
     margin-bottom: 10px;
   }
 }
 
 @media (min-width: 768px) {
-  #theme-switcher-nav-item {
+  .nav-item-space {
     margin-right: 10px;
+    margin-top: 0px;
   }
 }
 
@@ -65,5 +66,15 @@
 
 .Model-time-zone-heading {
   font-size: 1.5rem;
+}
+
+.play-icon {
+  padding-right: 10px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+#themeswitcher-nav-item {
+  margin-top: 5px;
 }
 

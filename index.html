@@ -103,11 +103,12 @@
     <link rel="icon" type="image/png" sizes="512x512" href="assets/img/US%20Time%20Converter%20App%20icon.png?h=01b67f8a1167582362d905d5d0bec60b">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=48d1501b1e398de1d9653bb8f91ce33e">
     <link rel="manifest" href="manifest.json?h=dfa9dfc7fbc4a27f81005d799d30ad0c" crossorigin="use-credentials">
-    <link rel="stylesheet" href="assets/css/News%20Cycle.css?h=bdfbadb9f8c06cf5df5de9b942c0f955">
-    <link rel="stylesheet" href="assets/css/Poppins.css?h=c0c1abd3c11b2d54340128b3657652e7">
+    <link rel="stylesheet" href="assets/css/News%20Cycle.css?h=514a557043257210d7cdaa65edf4e59b">
+    <link rel="stylesheet" href="assets/css/Poppins.css?h=c9196677ff4bea8eda4191100ad5ac3e">
+    <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css?h=03bc88feb8c0ce198a12645fce792b30">
     <link rel="stylesheet" href="assets/css/aos.min.css?h=ea67d3638a91cd05d22f1b4e31c7b746">
     <link rel="stylesheet" href="assets/css/Navbar-Right-Links-icons.css?h=befd8a398792e305b7ffd4a176b5b585">
-    <link rel="stylesheet" href="assets/css/styles.css?h=6cadce3d931af2c142c64ea780a65265">
+    <link rel="stylesheet" href="assets/css/styles.css?h=85cda4639999dec58e5ef577535b18f8">
 </head>
 
 <body>
@@ -121,7 +122,7 @@
                 <h1 id="utility-title">US India Time Converter</h1><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navcol-2">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item" id="theme-switcher-nav-item">
+                        <li class="nav-item nav-item-space" id="themeswitcher-nav-item">
                             <div class="theme-switcher nav-item dropdown"><a class="dropdown-toggle active focus-ring" aria-expanded="false" data-bs-toggle="dropdown" href="#" aria-label="Theme Switcher"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-sun-fill mb-1">
                                         <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
                                     </svg></a>
@@ -135,7 +136,8 @@
                                         </svg>Auto</a></div>
                             </div>
                         </li>
-                        <li class="nav-item"><a class="nav-link focus-ring" href="#" data-bs-target="#modal-2" data-bs-toggle="modal">How It works&nbsp;</a></li>
+                        <li class="nav-item nav-item-space" id="voice-settings-dialog"><a class="nav-link" href="#" data-bs-target="#speach-settings" data-bs-toggle="modal">Voice Settings</a></li>
+                        <li class="nav-item nav-item-space"><a class="nav-link focus-ring" href="#" data-bs-target="#modal-2" data-bs-toggle="modal">How It works&nbsp;</a></li>
                     </ul><a class="btn btn-outline-primary focus-ring ms-md-2" role="button" href="#" rel="help" data-bs-target="#modal-1" data-bs-toggle="modal">Readme</a>
                 </div>
             </div>
@@ -164,6 +166,8 @@
                             <li><strong>ALT/Option +1 </strong>to Enter US Time</li>
                             <li><strong>ALT/Option +2 </strong>to Enter India Time</li>
                             <li><strong>ALT/Option +3 </strong>to View Current Time</li>
+                            <li><strong>CTRL/CMD +I </strong>to announce Converted IST Time</li>
+                            <li><strong>CTRL/CMD +U </strong>to announce Converted US Time</li>
                         </ul>
                         <h2>Demo Videos</h2>
                         <h3>Desktop&nbsp;</h3>
@@ -241,6 +245,19 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" role="dialog" tabindex="-1" id="speach-settings">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title">Speech Settings</h1><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <h2>Choose Voice</h2><select id="voice-select"></select>
+                    </div>
+                    <div class="modal-footer"><button class="btn btn-primary" type="button" data-bs-target="#speach-settings" data-bs-toggle="modal">Save</button></div>
+                </div>
+            </div>
+        </div>
         <section>
             <h1 class="text-center Section">Time Converter</h1>
             <div class="row gy-2 Section">
@@ -254,7 +271,7 @@
                                 <!-- Start: Time Converter -->
                                 <div class="Section"><label class="form-label" for="timezoneSelect">Select Time Zone</label><select class="focus-ring form-select form-select-lg" id="timezoneSelect" name="timezoneSelect"></select></div><!-- End: Time Converter -->
                                 <div class="Section"><button class="btn btn-primary btn-lg focus-ring" id="convertButton" type="button" accesskey="I">Convert to <span style="text-decoration: underline;">I</span>ST</button></div><!-- Start: Result Regin -->
-                                <div class="Section answer-region">
+                                <div class="d-flex flex-row Section answer-region"><a id="play-ist-time" aria-label="Announce Converted IST time" href="#result"><i class="far fa-play-circle play-icon" style="font-size: 27px;"></i></a>
                                     <p class="fw-bold" id="result" tabindex="0" role="alert">Time in IST :&nbsp;</p>
                                 </div><!-- End: Result Regin -->
                             </form>
@@ -271,7 +288,7 @@
                                 <!-- Start: Time Converter -->
                                 <div class="Section"><label class="form-label" for="timezoneSelect">Select Time Zone</label><select class="focus-ring form-select form-select-lg" id="timezoneSelect-1" name="timezoneSelect"></select></div><!-- End: Time Converter -->
                                 <div class="Section"><button class="btn btn-primary btn-lg focus-ring" id="convertButton-1" type="button" accesskey="U">Convert to <span style="text-decoration: underline;">U</span>S</button></div><!-- Start: Result Regin -->
-                                <div class="Section answer-region">
+                                <div class="d-flex flex-row Section answer-region"><a id="play-us-time" href="#result-1" aria-label="Announce Converted US time"><i class="far fa-play-circle play-icon" style="font-size: 27px;"></i></a>
                                     <p class="fw-bold" id="result-1" tabindex="0" role="alert">Time in US:&nbsp;</p>
                                 </div><!-- End: Result Regin -->
                             </form>
@@ -337,7 +354,7 @@ if ('serviceWorker' in navigator) {
     <script src="assets/bootstrap/js/bootstrap.min.js?h=374d178d651fa0eaf680a1fa7b40c788"></script>
     <script src="assets/js/aos.min.js?h=d3718e34eeb0355be8e3179a2e2bccb7"></script>
     <script src="assets/js/bs-init.js?h=d0c6de1d0ecd5065d55e7b94664b5b10"></script>
-    <script src="assets/js/script.js?h=dada76c7f965c50beacaa747d33c878c"></script>
+    <script src="assets/js/script.js?h=f016a3bbba0260b50abd3dfa2b554b55"></script>
 </body>
 
 </html>
