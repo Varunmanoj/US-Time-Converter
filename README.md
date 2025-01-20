@@ -11,7 +11,7 @@ The U.S. Time Converter is a progressive web app (PWA) designed to help users co
 -** Daylight Saving Time Support**: Automatically adjusts for DST changes, so you can rely on accurate conversions year-round.
 - **Dark Mode**: Choose a theme that suits your preference for a more personalized experience.
 -** Keyboard Shortcuts**: Quickly navigate between different sections of the app with convenient keyboard shortcuts.
-- **Text-to-Speech Announcements**: Announce the converted time in U.S. or India using the built-in text-to-speech feature on desktop platforms (Windows and Mac).
+- **Text-to-Speech Announcements**: Announce the converted time in U.S. or India using the built-in text-to-speech feature on desktop platforms (Windows and Mac). You can also change the speaking voice from the list of voices provided by the operating system, including both natural high-quality voices and default voices on Windows.
 
 ## Why Choose U.S. Time Converter?
 Unlike traditional tools, this app goes beyond converting the current time. It empowers users to plan ahead, making it perfect for professionals, students, and anyone coordinating across multiple regions.
