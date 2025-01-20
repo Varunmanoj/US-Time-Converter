@@ -1,15 +1,5 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "com.varunmanojkumar.usindiatimeconverter",
-      "sha256_cert_fingerprints": [
-        "F7:CD:03:4E:66:0F:12:77:DA:46:B6:DD:93:A9:53:98:93:6F:59:F1:CA:80:EB:28:20:46:17:76:45:2B:7A:29"
-      ]
-    }
-  },
-  {
     "relation": [
       "delegate_permission/common.handle_all_urls",
       "delegate_permission/common.get_login_creds"
