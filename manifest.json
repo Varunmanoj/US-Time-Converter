@@ -6,6 +6,7 @@
             "src": "/assets/img/Appicons/iso/192.png",
             "type": "image/png",
             "sizes": "192x192"
+            
         },
         {
             "src": "/assets/img/US%20Time%20Converter%20App%20icon.png",
@@ -46,7 +47,7 @@
             "type": "image/webp",
             "form_factor": "wide",
             "label": "Supports Day Light Savings in Light Mode"
-        },
+        },                
         {
             "src": "/assets/img/Screenshorts/Current-Local-Time.webp",
             "sizes": "1920x1080",
@@ -104,7 +105,8 @@
     },
     "iarc_rating_id": "7f5dad47-5fac-4f99-969a-d20713d02994",
     "display_override": [
-        "standalone",
-        "window-controls-overlay"
-    ]
+    "standalone",
+    "window-controls-overlay"
+  ]
+
 }

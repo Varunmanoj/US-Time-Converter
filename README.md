@@ -15,12 +15,13 @@ The U.S. Time Converter is a progressive web app (PWA) designed to help users co
 ## Why Choose U.S. Time Converter?
 Unlike traditional tools, this app goes beyond converting the current time. It empowers users to plan ahead, making it perfect for professionals, students, and anyone coordinating across multiple regions.
 
-## Keyboard Shotcuts 
+## Keyboard Shotcuts (Desktop only)
 - <kbd>Alt/Option</kbd> + <kbd>I</kbd> to convert from US to India
 - <kbd>Alt/Option</kbd> + <kbd>U</kbd> to convert from India to US
 - <kbd>Alt/Option</kbd> + <kbd>1</kbd> to enter US Time.
 - <kbd>Alt/Option</kbd> + <kbd>2</kbd> to enter India Time.
-
+- <kbd>Alt/Option</kbd> + <kbd>T</kbd> to announce Converted IST Time
+- <kbd>Alt/Option</kbd> + <kbd>S</kbd> to announce Converted US Time
 
 ## Demo Video 
 ### Desktop

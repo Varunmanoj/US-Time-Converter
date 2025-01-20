@@ -183,130 +183,100 @@ updateTime();
 
 
 // Speak the conerted time aloud 
-// Get the play button, result paragraph, and voice select dropdown
-const playButtonIst = document.getElementById('play-ist-time');
-const resultParagraphIst = document.getElementById('result');
-const playButtonUs = document.getElementById('play-us-time');
-const resultParagraphUs = document.getElementById('result-1');
-const voiceSelect = document.getElementById('voice-select');
-
-// Variable to hold available voices
+// Initialize voices array
 let voices = [];
 
-// Function to populate the voice selection dropdown
+// Populate voice options dynamically
 function populateVoices() {
-    voices = window.speechSynthesis.getVoices(); // Get the list of available voices
+    voices = speechSynthesis.getVoices();
 
-    // Clear any existing options in the dropdown
-    voiceSelect.innerHTML = '';
+    if (voices.length === 0) {
+        console.error("No voices available in SpeechSynthesis API.");
+        return;
+    }
 
-    // Add an option to select "Default Voice"
-    const defaultOption = document.createElement('option');
-    defaultOption.value = 'default';
-    defaultOption.innerText = 'Select Voice';
-    voiceSelect.appendChild(defaultOption);
+    // Sort voices by language and dialect
+    voices.sort((a, b) => {
+        if (a.lang < b.lang) return -1;
+        if (a.lang > b.lang) return 1;
+        return 0;
+    });
 
-    // Populate the dropdown with the available voices
-    voices.forEach((voice, index) => {
-        const option = document.createElement('option');
-        option.value = index; // Store the index of the voice
-        option.innerText = voice.name; // Set the voice name as the display text
+    const voiceSelect = document.getElementById("voice-select");
+    voiceSelect.innerHTML = ""; // Clear existing options
+
+    voices.forEach((voice) => {
+        const option = document.createElement("option");
+        option.value = voice.name;
+        option.textContent = `${voice.name} (${voice.lang})`;
         voiceSelect.appendChild(option);
     });
 
-    // Retrieve and set the stored voice selection (if exists)
-    const storedVoiceIndex = localStorage.getItem('selectedVoiceIndex');
-    if (storedVoiceIndex !== null && storedVoiceIndex < voices.length) {
-        voiceSelect.value = storedVoiceIndex; // Set the stored voice index as selected
-    } else {
-        // Set the default voice based on the browser's default voice if no stored value
-        const defaultVoiceIndex = voices.findIndex(voice => voice.default);
-        if (defaultVoiceIndex !== -1) {
-            voiceSelect.value = defaultVoiceIndex; // Set the default voice in the dropdown
-        }
+    // Restore previously selected voice if available
+    const selectedVoiceName = localStorage.getItem("selectedVoice");
+    if (selectedVoiceName) {
+        voiceSelect.value = selectedVoiceName;
     }
 }
 
-// Function to announce the text inside the paragraph based on the button clicked
-function announceResult(button, paragraph) {
-    const text = paragraph.innerText.trim(); // Get the text and remove extra spaces
+// Save selected voice to localStorage
+function saveSelectedVoice() {
+    const voiceSelect = document.getElementById("voice-select");
+    localStorage.setItem("selectedVoice", voiceSelect.value);
+}
 
-    // Check if the text is empty
+// Speak text using the selected voice
+function speakText(paragraphId) {
+    const paragraph = document.getElementById(paragraphId);
+    if (!paragraph) {
+        console.error(`Paragraph with ID '${paragraphId}' not found.`);
+        return;
+    }
+
+    const text = paragraph.textContent.trim();
     if (!text) {
-        alert("No text to announce!");
+        console.error("No text to speak.");
         return;
     }
 
-    // Get the selected voice from the dropdown
-    const selectedVoiceIndex = voiceSelect.value;
+    const utterance = new SpeechSynthesisUtterance(text);
+    const selectedVoiceName = localStorage.getItem("selectedVoice");
+    const selectedVoice = voices.find((voice) => voice.name === selectedVoiceName);
 
-    let selectedVoice = voices[selectedVoiceIndex] || voices[0]; // Default to null if no voice selected
-
-    if (!selectedVoice && voiceSelect.value !== 'default') {
-        alert("Invalid voice selection.");
-        return;
-    }
-
-    // Create a new SpeechSynthesisUtterance object with the text
-    const speech = new SpeechSynthesisUtterance(text);
-
-    // Set the selected voice if available
-    if (selectedVoice) {
-        speech.voice = selectedVoice;
-    }
-
-    // Optionally set voice properties like pitch and rate
-    speech.pitch = 1; // Normal pitch
-    speech.rate = 1; // Normal speaking rate
-
-    // Speak the text
-    window.speechSynthesis.speak(speech);
+    utterance.voice = selectedVoice || voices[0]; // Default to first voice if none selected
+    speechSynthesis.speak(utterance);
 }
 
-// Store the selected voice index in localStorage when the user changes the selection
-voiceSelect.addEventListener('change', () => {
-    const selectedVoiceIndex = voiceSelect.value;
-    localStorage.setItem('selectedVoiceIndex', selectedVoiceIndex); // Store the selected voice index
+
+// Add event listeners
+function addEventListeners() {
+    // Play IST time
+    const playIstTime = document.getElementById("play-ist-time");
+    if (playIstTime) {
+        playIstTime.addEventListener("click", () => speakText("result"));
+    }
+
+    // Play US time
+    const playUsTime = document.getElementById("play-us-time");
+    if (playUsTime) {
+        playUsTime.addEventListener("click", () => speakText("result-1"));
+    }
+
+    // Voice selection change
+    const voiceSelect = document.getElementById("voice-select");
+    if (voiceSelect) {
+        voiceSelect.addEventListener("change", saveSelectedVoice);
+    }
+}
+
+// Initialize on DOMContentLoaded
+document.addEventListener("DOMContentLoaded", () => {
+    // Populate voices when available
+    if (speechSynthesis.onvoiceschanged !== undefined) {
+        speechSynthesis.addEventListener("voiceschanged", populateVoices);
+    }
+
+    populateVoices();
+    hidePlayIcons();
+    addEventListeners();
 });
-
-// Function to handle the keyboard shortcut
-function handleKeyboardShortcut(event, button, paragraph) {
-    // Check for 'Ctrl + U' (Windows) or 'Cmd + U' (Mac) key combination for the second button
-    if ((event.ctrlKey || event.metaKey) && event.key === 'u') {
-        event.preventDefault(); // Prevent default browser behavior for 'Ctrl/Cmd + U'
-        announceResult(button, paragraph); // Trigger the announcement for the second button
-    }
-}
-
-// Make sure the buttons and paragraphs exist and add event listeners
-if (playButtonIst && resultParagraphIst && playButtonUs && resultParagraphUs && voiceSelect) {
-    // Trigger speech announcement on the first play button click (for IST)
-    playButtonIst.addEventListener('click', () => announceResult(playButtonIst, resultParagraphIst));
-
-    // Trigger speech announcement on the second play button click (for US)
-    playButtonUs.addEventListener('click', () => announceResult(playButtonUs, resultParagraphUs));
-
-    // Add keyboard shortcut (Ctrl/Cmd + I) for announcing the text for IST
-    document.addEventListener('keydown', function (event) {
-        if ((event.ctrlKey || event.metaKey) && event.key === 'i') {
-            event.preventDefault(); // Prevent default browser behavior for 'Ctrl/Cmd + I'
-            announceResult(playButtonIst, resultParagraphIst); // Trigger the announcement for IST
-        }
-    });
-
-    // Add keyboard shortcut (Ctrl/Cmd + U) for announcing the text for US
-    document.addEventListener('keydown', function (event) {
-        handleKeyboardShortcut(event, playButtonUs, resultParagraphUs); // Trigger the announcement for US
-    });
-
-    // Populate the voice selection dropdown on page load
-    // window.speechSynthesis.onvoiceschanged = populateVoices;
-
-    // Ensure voices are fully loaded before populating the dropdown
-    window.speechSynthesis.onvoiceschanged = function () {
-        populateVoices(); // Populate voice options once voices are available
-    };
-
-} else {
-    console.error('One or more elements (buttons, paragraphs, or voice select) were not found.');
-}
