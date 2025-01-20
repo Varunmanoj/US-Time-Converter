@@ -29,3 +29,7 @@ Unlike traditional tools, this app goes beyond converting the current time. It e
 [![US India Time Converter](https://img.youtube.com/vi/H8CQAofF3Fc/0.jpg)](https://youtu.be/H8CQAofF3Fc)
 ### Mobile
 [![US India Time Converter](https://img.youtube.com/vi/nLqgBAV9ZC0/0.jpg)](https://youtu.be/nLqgBAV9ZC0)
+
+## Download 
+### Google Play
+[Download on Google Play](https://play.google.com/store/apps/details?id=com.varunmanojkumar.usindiatimeconverter)
