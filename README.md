@@ -33,3 +33,5 @@ Unlike traditional tools, this app goes beyond converting the current time. It e
 ## Download 
 ### Google Play
 [Download on Google Play](https://play.google.com/store/apps/details?id=com.varunmanojkumar.usindiatimeconverter)
+### Microsoft Store
+[Get it on Microsoft Store](https://apps.microsoft.com/detail/9nhdr5pnn3lv?hl=en-GB&gl=IN)
