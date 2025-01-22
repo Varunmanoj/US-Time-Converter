@@ -180,6 +180,8 @@ setInterval(updateTime, 1000);
 // Initial call to populate table immediately
 updateTime();
 
+
+
 // Speak the conerted time aloud 
 // Initialize voices array
 let voices = [];
@@ -208,11 +210,14 @@ function populateVoices() {
         option.value = voice.name;
         option.textContent = `${voice.name} (${voice.lang})`;
         voiceSelect.appendChild(option);
+    });
+
+    // Restore previously selected voice if available
     const selectedVoiceName = localStorage.getItem("selectedVoice");
     if (selectedVoiceName) {
         voiceSelect.value = selectedVoiceName;
     }
-});
+}
 
 // Save selected voice to localStorage
 function saveSelectedVoice() {
@@ -250,6 +255,7 @@ function addEventListeners() {
     if (playIstTime) {
         playIstTime.addEventListener("click", () => speakText("result"));
     }
+
     // Play US time
     const playUsTime = document.getElementById("play-us-time");
     if (playUsTime) {
@@ -273,4 +279,4 @@ document.addEventListener("DOMContentLoaded", () => {
     populateVoices();
     hidePlayIcons();
     addEventListeners();
-})
+});
