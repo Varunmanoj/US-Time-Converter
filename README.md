@@ -24,6 +24,14 @@ Unlike traditional tools, this app goes beyond converting the current time. It e
 - <kbd>Alt/Option</kbd> + <kbd>T</kbd> to announce Converted IST Time
 - <kbd>Alt/Option</kbd> + <kbd>S</kbd> to announce Converted US Time
 
+## Business Impact
+This Time Conversion tool provides an efficient and convenient tool for scheduling meetings and calls across multiple U.S. time zones and India Standard Time (IST). 
+1.	By quickly converting local times to any of the four U.S. time zones (Eastern, Central, Mountain, Pacific) and IST, this utility enables users to promptly confirm schedules with clients during the calls itself, saving valuable time. 
+2.	Additionally, the website displays the current local time in each region, which enhances our ability to understand the customer's current time zone during interactions. 
+This tool streamlines coordination and enhances client satisfaction by ensuring accurate and timely meeting planning. 
+This tool is generic and can be used across all Deloitte USI projects. Users can rely on this tool instead of performing time zone lookups via a Google search.
+
+
 ## Demo Video 
 ### Desktop
 [![US India Time Converter](https://img.youtube.com/vi/H8CQAofF3Fc/0.jpg)](https://youtu.be/H8CQAofF3Fc)
