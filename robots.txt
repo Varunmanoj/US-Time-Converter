@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: 
+Sitemap: https://us-time-converter.varunmanojkumar.in/sitemap.xml
